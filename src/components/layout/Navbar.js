@@ -3,20 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faGift} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
-class Navbar extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired
-  };
-  render() {
-    return (
-      <nav className='navbar bg-primary'>
-        <h1>
-          <FontAwesomeIcon icon={faGift} className="mr-2"/>
-          {this.props.title}
-        </h1>
-      </nav>
-    );
-  }
-}
+const Navbar = (props) => {
+  return (
+    <nav className='navbar bg-primary'>
+      <h1>
+        <FontAwesomeIcon icon={faGift} className="mr-2"/>
+        {props.title}
+      </h1>
+    </nav>
+  );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired
+};
 
 export default Navbar;
